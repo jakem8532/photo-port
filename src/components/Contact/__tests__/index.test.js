@@ -15,3 +15,15 @@ describe('contact component', () => {
         expect(asFragment()).toMatchSnapshot()
     })
 })
+
+it('renders contact field', () => {
+    const { getByTestId } = render(<Contact />)
+    // eslint-disable-next-line testing-library/prefer-screen-queries
+    expect(getByTestId('h1tag')).toHaveTextContent('Contact Me')
+})
+
+it('renders submit button', () => {
+    const { getByTestId } = render(<Contact />)
+    // eslint-disable-next-line testing-library/prefer-screen-queries
+    expect(getByTestId('button')).toHaveTextContent('Submit')
+})
